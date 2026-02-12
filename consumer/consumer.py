@@ -5,7 +5,7 @@ from confluent_kafka.serialization import SerializationContext, MessageField
 
 # Schema Registry config
 schema_registry_client = SchemaRegistryClient(
-    {'url': 'http://localhost:8081'}
+    {'url': 'http://schema-registry:8081'}
 )
 
 # Avro Deserializer
@@ -15,7 +15,7 @@ avro_deserializer = AvroDeserializer(
 
 # Kafka Consumer config
 consumer_conf = {
-    'bootstrap.servers': 'localhost:9092',
+    'bootstrap.servers': 'kafka:29092',
     'group.id': 'user-consumer-group',
     'auto.offset.reset': 'earliest'
 }

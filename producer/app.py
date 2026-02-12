@@ -13,7 +13,7 @@ with open("user.avsc") as f:
 
 # Schema Registry
 schema_registry_client = SchemaRegistryClient(
-    {'url': 'http://localhost:8081'}
+    {'url': 'http://schema-registry:8081'}
 )
 
 avro_serializer = AvroSerializer(
@@ -23,7 +23,7 @@ avro_serializer = AvroSerializer(
 
 # Kafka Producer
 producer = Producer({
-    'bootstrap.servers': 'localhost:9092'
+    'bootstrap.servers': 'kafka:29092'
 })
 
 # Pydantic model for request validation
